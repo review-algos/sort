@@ -7,18 +7,25 @@ int split(vector<int> &array, int low, int high) {
     int pivot = array[low];
 
     while (true) {
+        /// 1. find element higher than pivot & move it to left
         while (high > low && pivot <= array[high])
             high--;
+        // if low & high meet, stop
         if (low >= high)
             break;
+        // move it to left
         array[low++] = array[high];
 
+        /// 2. find element lower than pivot from left & move it to right
         while (low < high && pivot >= array[low])
             low++;
+        // if low & high meet, stop
         if (low >= high)
             break;
+        // move it to right
         array[high--] = array[low];
     }
+    /// 3. move the pivot to the position where low & high meet
     array[high] = pivot;
 
     return high;
@@ -29,8 +36,11 @@ void quicksort(vector<int> &array, int low, int high) {
 
     if (low >= high) return;
 
+    /// 1. split array & return middle
     middle = split(array, low, high);
+    /// 2. sort left part
     quicksort(array, low, middle - 1);
+    /// 3. sort right part
     quicksort(array, middle + 1, high);
 }
 

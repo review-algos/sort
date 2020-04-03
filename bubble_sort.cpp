@@ -3,13 +3,20 @@
 
 using namespace std;
 
+void swap(int *a, int *b) {
+    int tmp = 0;
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
 void bubble_sort(vector<int> &array) {
+    /// 1. traverse array 
     for (int i = 0; i < array.size(); i++) {
+        /// 2. move the biggest bubble to 'top'
         for (int j = 0; j < array.size() - i - 1; j++) {
             if (array[j] > array[j + 1]) {
-                int tmp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = tmp;
+                swap(array[j], array[j + 1]);
             }
         }
     }
