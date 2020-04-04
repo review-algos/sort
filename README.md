@@ -1,6 +1,6 @@
 # Sort Algorithms
 
-## Build
+## 编译代码
 
 你可以直接使用`make`命令编译所有的程序：
 

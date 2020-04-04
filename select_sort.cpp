@@ -4,13 +4,16 @@
 using namespace std;
 
 void select_sort(vector<int> &array) {
-    for (int i = 0; i < array.size() - 1; i++) {
-        int min_idx = i;
-        for (int j = i + 1; j < array.size(); j++) {
+    /// 1. traverse array
+    for (unsigned int i = 0; i < array.size() - 1; i++) {
+        unsigned int min_idx = i;
+        /// 2. find the min element
+        for (unsigned int j = i + 1; j < array.size(); j++) {
             if (array[min_idx] > array[j]) {
                min_idx = j; 
             } 
         }
+        /// 3. move it to front
         int tmp = array[i];
         array[i] = array[min_idx];
         array[min_idx] = tmp;

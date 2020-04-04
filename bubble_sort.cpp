@@ -12,9 +12,9 @@ void swap(int *a, int *b) {
 
 void bubble_sort(vector<int> &array) {
     /// 1. traverse array 
-    for (int i = 0; i < array.size(); i++) {
+    for (unsigned int i = 0; i < array.size() - 1; i++) {
         /// 2. move the biggest bubble to 'top'
-        for (int j = 0; j < array.size() - i - 1; j++) {
+        for (unsigned int j = 0; j < array.size() - i - 1; j++) {
             if (array[j] > array[j + 1]) {
                 swap(array[j], array[j + 1]);
             }

@@ -1,20 +1,23 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 void insert_sort(vector<int> &array) {
+    if (array.empty()) return;
+
     vector<int> rst;
 
     rst.push_back(array[0]);
 
-    for (int i = 1; i < array.size(); i++) {
+    for (unsigned int i = 1; i < array.size(); i++) {
         if (rst[rst.size() - 1] < array[i]) {
             rst.push_back(array[i]);
-            continue;
+            //continue;
         } else {
-            int pos = rst.size() - 1;
-            for (int j = 0; j < rst.size(); j++) {
+            unsigned int pos = rst.size() - 1;
+            for (unsigned int j = 0; j < rst.size(); j++) {
                 if (rst[rst.size() - j - 1] > array[i]) {
                     pos = rst.size() - j - 1;
                 } else 
